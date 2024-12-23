@@ -3,9 +3,24 @@ import { motion } from "framer-motion";
 import { LoremIpsum } from "react-lorem-ipsum";
 import { Link } from "react-router-dom";
 import { items } from "./data";
+import { useEffect, useState } from "react";
 
 export function Item({ id }) {
+  const [isMobile, setIsMobile] = useState(false);
   const { category, title } = items.find((item) => item.id === id);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -19,7 +34,13 @@ export function Item({ id }) {
       >
         <Link to="/" />
       </motion.div>
-      <div className="card-content-container open">
+      <motion.div
+        className="card-content-container open"
+        initial={{ opacity: 1, backdropFilter: isMobile ? "none" : "blur(0px)" }}
+        animate={{ opacity: 1, backdropFilter: isMobile ? "none" : "blur(10px)" }}
+        exit={{ opacity: 0, backdropFilter: isMobile ? "none" : "blur(0px)" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
         <motion.div className="card-content" layoutId={`card-container-${id}`}>
           <motion.div
             className="card-image-container"
@@ -34,6 +55,7 @@ export function Item({ id }) {
             <span className="category">{category}</span>
             <h2>{title}</h2>
           </motion.div>
+
           <motion.div className="content-container" animate>
             <LoremIpsum
               p={6}
@@ -42,7 +64,7 @@ export function Item({ id }) {
             />
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
     </>
   );
 }
