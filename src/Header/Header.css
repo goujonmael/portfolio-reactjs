@@ -1,0 +1,18 @@
+.header {
+    backdrop-filter: blur(10px);
+    /* Effet de flou */
+    -webkit-backdrop-filter: blur(10px);
+    /* Effet de flou pour Safari */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 8px;
+    border-bottom: 2px solid var(--gray-alpha-200);
+}
+
+.headerTitle {
+    display: flex;
+    align-items: center;
+    color: var(--text);
+}
