@@ -40,13 +40,10 @@
 
 
 .main {
-    margin-top: 3%;
     display: flex;
     flex-direction: column;
     gap: 32px;
     grid-row-start: 2;
-    padding: 10px;
-
     width: 100%;
 }
 
@@ -80,16 +77,26 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--dark-blue);
+    height: 30vh;
+}
+
 /* 2 columns for profile picture and name */
 .me {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     border-radius: 8px;
-    background-color: var(--grey);
+    background-color: var(--dark-blue);
+    border: 2px solid var(--clear-blue);
     padding: 10px;
-    width: fit-content;
-    margin: 10px;;
+    /*width: fit-content;*/
+    margin: 10px;
+    height: 25vh;
 }
 
 .me_right {
@@ -102,15 +109,14 @@
     font-size: 20px;
     line-height: 20px;
     font-weight: 400;
-    font-family: var(--font-geist-sans);
+    font-family: var(--font-text);
     text-align: justify;
     /* justifier le texte */
-    color: var(--clear-blue);
+    color: var(--text);
 }
 
 /* profile picture */
 .profile {
-    border-radius: 50%;
     justify-self: center;
     user-select: none;
     /* Empêche la sélection de l'image */
@@ -118,17 +124,31 @@
     /* Empêche les événements de la souris sur l'image */
 }
 
+.profile_picture {
+    border-radius: 25%;
+    /* pivoter de 10° */
+    transform: rotate(5deg);
+    max-height: 15vh;
+    max-width: 15vh;
+    /* ombre */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+}
+
 /* Name next to the profile picture */
 .name {
     font-size: 40px;
     font-weight: 500;
-    font-family: var(--font-geist-sans);
-    color: var(--dark-blue);
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-style: normal;
+    color: var(--text);
     line-height: 0.8;
 }
 
 .airbus {
-    color: rgb(7, 26, 61);
+    /*color: rgb(7, 26, 61);*/
+    color: var(--yellow);
     text-decoration: underline;
 }
 

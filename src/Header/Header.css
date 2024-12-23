@@ -9,6 +9,9 @@
     z-index: 1000;
     padding: 8px;
     border-bottom: 2px solid var(--gray-alpha-200);
+    height: var(--header-padding);
+    display: flex;
+    border: 2px solid blue;
 }
 
 .headerTitle {
