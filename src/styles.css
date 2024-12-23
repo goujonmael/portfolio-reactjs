@@ -44,6 +44,7 @@ body {
   /*max-width: 990px;*/
   flex: 1 1 100%;
   padding-top: var(--header-padding);
+  background-color: var(--dark-blue);
 }
 
 h1 {

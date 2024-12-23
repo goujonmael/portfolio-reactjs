@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion, useSpring } from "framer-motion";
 import "./Me.css";
 import Image from "react-image";
+import { transform } from "typescript";
 
 export default function Me() {
     const [isIutHovered, setIsIutHovered] = useState(false);
@@ -24,8 +25,8 @@ export default function Me() {
 
                 <motion.div
                     className="profile"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, transform: "rotate(0deg)" }}
+                    animate={{ opacity: 1, transform: "rotate(5deg)" }}
                     transition={{ duration: 1 }}
                 >
                     <img

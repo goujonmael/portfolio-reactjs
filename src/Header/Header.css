@@ -11,11 +11,15 @@
     border-bottom: 2px solid var(--gray-alpha-200);
     height: var(--header-padding);
     display: flex;
-    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: #22222287;
 }
 
 .headerTitle {
     display: flex;
     align-items: center;
     color: var(--text);
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-style: normal;
 }
