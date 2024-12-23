@@ -27,7 +27,7 @@ export default function Me() {
                     className="profile"
                     initial={{ opacity: 0, transform: "rotate(0deg)" }}
                     animate={{ opacity: 1, transform: "rotate(5deg)" }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.5 }}
                 >
                     <img
                         className="profile_picture"
@@ -41,59 +41,64 @@ export default function Me() {
                     <motion.h1 className="name">
                         GOUJON
                         <br />
-                        Mael
+                        Mael <span
+                            style={{ fontFamily: "Lato" }}>/></span>
                     </motion.h1>
                     <span className="description">
-                        {isIutHovered && (
-                            <motion.div
-                                animate={{
-                                    x: [0, 10, 20, 30, 40, 50, 60],
-                                    y: [0],
-                                    opacity: [0, 1],
-                                }}
-                                transition={{ duration: 1, type: "spring", bounce: 0.6, stiffness: 200 }}
-                                style={{
-                                    width: 30,
-                                    height: 30,
-                                    position: "absolute",
-                                    opacity: 0,
-                                }}
-                            >
-                                <img
-                                    src="/images/Me/school.svg"
-                                    alt=" "
-                                    width={30}
-                                    height={30}
-                                />
-                            </motion.div>
-                        )}
-                        <br />
-                        Étudiant en <a className="but" href="https://www.univ-tlse3.fr/decouvrir-nos-diplomes/but-informatique-parcours-deploiement-dapplications-communicantes-et-securisees-toulouse"
-                            onMouseEnter={() => setIsIutHovered(true)} onMouseLeave={() => setIsIutHovered(false)}
-                        >Informatique
-                        </a>
-                        <br />
-                        Alternant chez <a className="airbus" href="https://www.airbus.com/en/products-services/space/telecommunications-and-navigation-satellites" onMouseEnter={() => setIsAirbusHovered(true)}
-                            onMouseLeave={() => setIsAirbusHovered(false)} style={{ position: 'relative', display: 'inline-block' }}>Airbus
-                            {isAirbusHovered && (
+                        <span>
+                            {isIutHovered && (
                                 <motion.div
-                                    animate={{ x: [0, 50, 0] }}
-                                    transition={{ duration: 1, ease: "linear" }}
+                                    animate={{
+                                        x: [0, 10, 20, 30, 40, 50, 55],
+                                        y: [-25],
+                                        opacity: [0, 1],
+                                    }}
+                                    transition={{ duration: 1, type: "spring", bounce: 0.6, stiffness: 200 }}
                                     style={{
                                         width: 30,
                                         height: 30,
                                         position: "absolute",
+                                        opacity: 0,
                                     }}
                                 >
                                     <img
-                                        src="/images/Me/satellite.svg"
+                                        src="/images/Me/school.svg"
                                         alt=" "
                                         width={30}
                                         height={30}
                                     />
                                 </motion.div>
                             )}
-                        </a>
+                            Étudiant en <a className="but" href="https://www.univ-tlse3.fr/decouvrir-nos-diplomes/but-informatique-parcours-deploiement-dapplications-communicantes-et-securisees-toulouse"
+                                onMouseEnter={() => setIsIutHovered(true)} onMouseLeave={() => setIsIutHovered(false)}
+                            >Informatique
+                            </a>
+                            <br /> & <br />
+                        </span>
+                        <span>
+
+                            Alternant chez <a className="airbus" href="https://www.airbus.com/en/products-services/space/telecommunications-and-navigation-satellites" onMouseEnter={() => setIsAirbusHovered(true)}
+                                onMouseLeave={() => setIsAirbusHovered(false)} style={{ position: 'relative', display: 'inline-block' }}>Airbus
+                                {isAirbusHovered && (
+                                    <motion.div
+                                        animate={{ x: [0, 50, 0] }}
+                                        transition={{ duration: 1, ease: "linear" }}
+                                        style={{
+                                            width: 30,
+                                            height: 30,
+                                            position: "absolute",
+                                        }}
+                                    >
+                                        <img
+                                            src="/images/Me/satellite.svg"
+                                            alt=" "
+                                            width={30}
+                                            height={30}
+                                        />
+                                    </motion.div>
+                                )}
+                            </a>
+                        </span>
                     </span>
 
                 </div>
