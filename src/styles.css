@@ -86,11 +86,12 @@ li {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  padding: 0 10px;
 }
 
 .card {
   position: relative;
-  padding: 10px;
+  padding: 5px;
   height: 300px;
   flex: 0 0 40%;
   max-width: 40%;
@@ -246,6 +247,7 @@ p {
     padding: 10px;
     padding-left: 0;
     padding-right: 0;
+    height: 20vh;
   }
 
   .card:nth-child(4n + 1),
@@ -260,7 +262,5 @@ p {
     bottom: 0 !important;
   }
 
-  .card-content-container {
-    height: 80%;
-  }
+
 }

@@ -12,14 +12,16 @@
     height: var(--header-padding);
     display: flex;
     border-radius: 10px;
-    background-color: #22222287;
+    background-color: #0c46516b
 }
 
 .headerTitle {
     display: flex;
     align-items: center;
-    color: var(--text);
-    font-family: var(--font-title);
+    color: var(--yellow);
+    font-family: var(--font-text);
     font-weight: 800;
-    font-style: normal;
+    font-style: italic;
+    /* only uppercase */
+    text-transform: uppercase;
 }

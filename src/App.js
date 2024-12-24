@@ -5,6 +5,8 @@ import { Item } from "./Item";
 import { List } from "./List";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Me from "./Home/Me/Me";
+import Welcome from "./Home/Welcome/Welcome";
+import StarOfLife from "./Home/StarOfLife/StarOfLife";
 
 function Store({ match }) {
   let { id } = match.params;
@@ -25,6 +27,8 @@ export default function App() {
     <div className="main">
       <Header />
       <div className="container">
+        <Welcome />
+        <StarOfLife />
         <Me />
         <Router>
           <Route path={["/:id", "/"]} component={Store} />

@@ -9,40 +9,35 @@ export default function Me() {
     const [isAirbusHovered, setIsAirbusHovered] = useState(false);
     const constraintsRef = useRef(null);
     return (
-        <motion.div
-            className="block"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-        >
+
+        <div className="me2">
             <motion.div
                 className="me"
                 ref={constraintsRef}
-                style={{
-                    position: "relative"
-                }}
             >
+                <div className="me_left">
+                    <motion.div
+                        className="profile"
+                        initial={{ opacity: 0, transform: "rotate(0deg)" }}
+                        animate={{ opacity: 1, transform: "rotate(5deg)" }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <img
+                            className="profile_picture"
+                            src="/images/Me/pp_shorted.jpg"
+                            alt="Picture of Mael GOUJON"
+                        />
 
-                <motion.div
-                    className="profile"
-                    initial={{ opacity: 0, transform: "rotate(0deg)" }}
-                    animate={{ opacity: 1, transform: "rotate(5deg)" }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <img
-                        className="profile_picture"
-                        src="/images/Me/pp.jpg"
-                        alt="Picture of Mael GOUJON"
-                        width={180}
-                        height={180}
-                    />
-                </motion.div>
+                    </motion.div>
+                </div>
                 <div className="me_right">
+                    <motion.h1 style={{ fontSize: 40, fontWeight: 700, fontFamily: "Lato", color: "var(--yellow)" }}>
+                        &lt;/&gt;
+                    </motion.h1>
                     <motion.h1 className="name">
                         GOUJON
                         <br />
-                        Mael <span
-                            style={{ fontFamily: "Lato" }}>/></span>
+                        Mael
                     </motion.h1>
                     <span className="description">
 
@@ -119,6 +114,6 @@ export default function Me() {
                 </div>
 
             </motion.div>
-        </motion.div>
+        </div>
     )
 }
